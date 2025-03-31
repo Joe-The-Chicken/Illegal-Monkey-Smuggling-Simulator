@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+}
+
+h1,
+a,
+#options {
+    color: greenyellow;
+}
+
+#log {
+    font-style: normal;
+}
+
+input {
+    background-color: black;
+    color: greenyellow;
+    border: 0px;
+    width: 250px;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+#last {
+    color: gray;
+    font-style: italic;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Illegal Monkey Smuggling Simulator</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <h1>Illegal Monkey Smuggling Simulator</h1>
+    <p id="stats"></p>
+    <div id="inv"></div>
+    <p id="last"></p>
+    <p id="log"></p>
+    <pre id="options">Enter 1 to Start!</pre>
+    <input type="text" id="input" onchange="runInput()"></input>
+    <!-- Storage JS Files -->
+    <script src="js/items.js"></script>
+    <script src="js/loot.js"></script>
+    <script src="js/town.js"></script>
+    <script src="js/locationData.js"></script>
+    <!-- Executed JS Files -->
+    <script src="js/inventory.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/itemInteract.js"></script>
+    <script src="js/update.js"></script>
+    <!-- Show Title Screen -->
+    <script>
+        setTimeout(() => {
+            runInput();
+        }, 10);
+    </script>
+</body>
+
+</html>
