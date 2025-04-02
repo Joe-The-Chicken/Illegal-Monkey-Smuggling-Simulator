@@ -2,13 +2,19 @@
 IMSS is a Oregon-trail-esque game where you are the owner of a couple hundred immortal capuchin monkeys that need to be delivered to Mexico. The game takes place in a post-apocalyptic world where everyone fights for themselves in a struggling United States.
 
 # Upcoming Features
- - Casinos
  - More House loot variants
  - Bars
  - Police stations
  - Rogue Enemies
    
 # Changelog
+
+Beta 0.1.1
+-
+ - Added Casinos
+ - Added Blackjack
+ - Added Roulette Table
+ - Fixed Bug: Rest stop cashier opens in town
 
 Beta 0.1.0
  -
