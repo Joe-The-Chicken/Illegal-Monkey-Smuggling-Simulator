@@ -33,15 +33,19 @@ function resultMountainTrack() {
         } else {
             move(true, "restStopTrack");
         }
-    } else if (Math.random() > 0.3) {
+    } else if (Math.random() > 0.4) {
         move(true, "mountainTrack");
     } else {
-        if (loc.hasEnteredTown == false) {
-            loc.hasEnteredTown = true;
+        if (Math.random() > 0.3) {
+            if (loc.hasEnteredTown == false) {
+                loc.hasEnteredTown = true;
+            } else {
+                loc.curTown++;
+            }
+            move(true, "townTrack");
         } else {
-            loc.curTown++;
+            move(true, "casinoTrack");
         }
-        move(true, "townTrack");
     }
 }
 

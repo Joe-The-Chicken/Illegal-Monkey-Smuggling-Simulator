@@ -47,9 +47,9 @@ function reloadAreas() {
             "restStop": new Option("You're at the rest stop.", ["Buy Food", "Buy Drink", "Buy Fuel", "Talk to Cashier", "Leave"], [() => move(false, "buyFood"), () => move(false, "buyDrink"), () => move(false, "buyFuel"), () => move(false, "talkToCashier"), () => resultMountainTrack()]),
 
             "talkToCashier": new Option("You walk up to the cashier.", ["Ask to trade", "Ask about the Moose Blood", "Nevermind, I have social anxiety"], [() => move(false, "tradeCashier"), () => move(false, "cashierTalk1"), () => move(false, "restStop")]),
-            "cashierTalk1": new Option("CASHIER: Oh, yeah... When you mix the blood with 17 pings of sugar it becomes highly addictive. ", ["(Continue)"], [() => move(false, "cashierTalk2")], true),
-            "cashierTalk2": new Option("CASHIER: So you're not actually getting less thirsty. You're brain is just high on sugary blood and forgets that it's thirsty for a while.", ["Yeah that makes complete sense", "How is that much sugar healthy?"], [() => move(false, "restStop"), () => move(false, "cashierTalk3")], true),
-            "cashierTalk3": new Option("CASHIER: It isn't.", ["..."], [() => move(false, "restStop")], true),
+            "cashierTalk1": new Option("CASHIER: Oh, yeah... When you mix the blood with 17 pings of sugar it becomes highly addictive. ", ["(Continue)"], [() => move(false, "cashierTalk2")]),
+            "cashierTalk2": new Option("CASHIER: So you're not actually getting less thirsty. You're brain is just high on sugary blood and forgets that it's thirsty for a while.", ["Yeah that makes complete sense", "How is that much sugar healthy?"], [() => move(false, "restStop"), () => move(false, "cashierTalk3")]),
+            "cashierTalk3": new Option("CASHIER: It isn't.", ["..."], [() => move(false, "restStop")]),
             "tradeCashier": new Option("CASHIER wants to trade!", ["Done"], [() => move(false, "restStop")], true),
 
             "buyFood": new Option("You look at the menu.", ["Buy Mountain Burger (Replenish 20 Hunger)", "Buy Bigger Mountain Burger (Replenish 40 Hunger)", "Nevermind"], [() => move(false, "food1"), () => move(false, "food2"), () => move(false, "restStop")]),
@@ -73,8 +73,16 @@ function reloadAreas() {
             "house4": new Option("You enter the building.", ["Raid", "Leave"], [() => raidBuilding("Building 4"), () => move(false, "town")]),
             "house5": new Option("You enter the building.", ["Raid", "Leave"], [() => raidBuilding("Building 5"), () => move(false, "town")]),
 
-            "tradingPost": new Option("You enter the trading post. An employee is waiting patiently for you to do something.", ["Sell Items", "Leave"], [() => move(false, "tradeCashier"), () => move(false, "town")]),
-            "tradeCashier": new Option("EMPLOYEE wants to trade!", ["Done"], [() => move(false, "tradingPost")], true),
+            "tradingPost": new Option("You enter the trading post. An employee is waiting patiently for you to do something.", ["Sell Items", "Leave"], [() => move(false, "tradeEmployee"), () => move(false, "town")]),
+            "tradeEmployee": new Option("EMPLOYEE wants to trade!", ["Done"], [() => move(false, "tradingPost")], true),
+
+            // Casino
+            "casinoTrack": new Option("You travel for five miles. You're approaching a casino.", ["Keep Going", "Stop Here"], [() => resultMountainTrack(), () => move(false, "casino")]),
+            "casino": new Option("You're in the casino. Where do you go?", ["Roulette Table", "Blackjack", "Leave"], [() => move(false, "roulette"), () => move(false, "blackjack"), () => resultMountainTrack()]),
+
+            "roulette": new Option("ROULETTE wants to play a game!", ["Done"], [() => move(false, "casino")]),
+            "blackjack": new Option("BLACKJACK wants to play a game!", ["Done"], [() => move(false, "casino")]),
+            "casinoDealer": new Option("DEALER wants to trade!", ["Done"], [() => move(false, "casino")], true),
 
             // End
             "approachDakota": new Option("You're about to enter South Dakota.", ["Enter the Dakotas"], [() => move("dakota, fieldTrackStart")])
