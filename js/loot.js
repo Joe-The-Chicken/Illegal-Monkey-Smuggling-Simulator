@@ -48,7 +48,7 @@ const lootPool = {
         poolItem("Scarecrow", 10),
         poolItem("Fuel Canister", 10),
     ]),
-    "bank": new Pool([
+    "hall": new Pool([
         // Common Items - 63%
         poolItem("Plant", 40),
         poolItem("Wooden Desk", 40),
@@ -66,11 +66,6 @@ const lootPool = {
         poolItem("Gold Bars", 10),
         poolItem("Money Pile", 10),
         poolItem("Crown", 10),
-    ]),
-    "hall": new Pool([
-        poolItem("Small Wood Log", 10),
-        poolItem("Wood Log", 5),
-        poolItem("Big Wood Log", 2)
     ])
 }
 

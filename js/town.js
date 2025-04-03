@@ -39,14 +39,14 @@ function generateTown(n) {
         curResponse = [];
 
         curTown["Town Hall"] = new Building(Math.floor(Math.random() * 2), townLevel, "hall");
-        curResponse.push(() => move(false, "bank"));
+        curResponse.push(() => move(false, "townHall"));
 
         curTown["Trading Post"] = {};
         curResponse.push(() => move(false, "tradingPost"));
 
         for (var i = 0; i < Math.ceil(Math.random() * 5); i++) {
             curTown["Building " + (i + 1)] = new Building(
-                Math.floor(Math.random() * 2), townLevel, ["house", "house", "garden"][Math.floor(Math.random() * 4)]
+                Math.floor(Math.random() * 2), townLevel, ["house", "house", "garden"][Math.floor(Math.random() * 3)]
             );
 
             let h = houseNames[i];
