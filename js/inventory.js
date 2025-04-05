@@ -1,7 +1,7 @@
 let money = 50;
 let hunger = 100;
 let thirst = 100;
-let fuel = 100;
+let fuel = 50;
 let distance = 1;
 let high = false;
 let highTicks = 0;
@@ -11,7 +11,7 @@ let inventory = []
 function dayStatUpdate() {
     hunger -= 5;
     thirst -= 5;
-    fuel -= 10;
+    fuel -= 5;
     distance += 1;
     if (high) {
         highTicks -= 1;
